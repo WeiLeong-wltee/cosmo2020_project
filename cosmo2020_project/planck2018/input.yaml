@@ -1,0 +1,44 @@
+theory:
+  camb:
+    extra_args:
+      bbn_predictor: PArthENoPE_880.2_standard.dat
+      halofit_version: mead
+      lens_potential_accuracy: 1
+      nnu: 3.046
+      num_massive_neutrinos: 1
+      theta_H0_range:
+      - 20
+      - 100
+likelihood:
+  planck_2018_highl_plik.TTTEEE: null
+  planck_2018_lensing.clik: null
+  planck_2018_lowl.EE: null
+  planck_2018_lowl.TT: null
+params:
+  mnu: 0.06
+  ns: 0.9626
+  ombh2: 0.02212
+  omch2: 0.1206
+  tau: 0.0522
+  H0:
+    latex: H_0
+    prior:
+      max: 100
+      min: 20
+    proposal: 2
+    ref:
+      dist: norm
+      loc: 67
+      scale: 2
+  omega_de:
+    latex: \Omega_\Lambda
+  omegam:
+    latex: \Omega_\mathrm{m}
+  omegamh2:
+    derived: 'lambda omegam, H0: omegam*(H0/100)**2'
+    latex: \Omega_\mathrm{m} h^2
+  sigma8:
+    latex: \sigma_8
+sampler:
+  mcmc: null
+output: .
